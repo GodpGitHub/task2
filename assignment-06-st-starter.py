@@ -22,13 +22,12 @@ fig, ax = plt.subplots(1, 3, figsize=(15,5))
 
 i = 0
 
-for class_name, class_df in ttnic_train.groupby('Pclass'):
+for name, df in ttnic_train.groupby('Pclass'):
 
-    class_df.Fare.plot.box(ax=ax[i])
-    ax[i].set_xlabel(f'Pclass = {class_name}')
+    df.Fare.plot.box(ax=ax[i])
+    ax[i].set_xlabel(f'Pclass = {name}')
     ax[i].set_ylabel('Fare')
 
     i += 1
 
 st.pyplot(fig)
-    
